@@ -76,6 +76,23 @@ img {
   max-width: var(--site-max-width);
 }
 
+.secondary-heading {
+  text-align: center;
+  padding: 6rem 0 10rem;
+  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+}
+
+.secondary-heading::after {
+  content: "";
+  width: 8rem;
+  height: 5px;
+  display: block;
+  margin: 1rem auto 0;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius-s);
+}
+
 /* --------------------------- */
 /* Header */
 /* --------------------------- */
@@ -197,6 +214,67 @@ img {
   border-color: var(--secondary-color);
 }
 
+/* --------------------------- */
+/* About Section */
+/* --------------------------- */
+
+.about-section {
+  padding: 12rem 0;
+  background-color: var(--light-pink-color);
+}
+
+.about-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.about-img {
+  width: 40rem;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: var(--border-radius-circle);
+}
+
+.about-details {
+  max-width: 50%;
+}
+
+.about-section .secondary-heading {
+  padding: 0;
+}
+
+.about-text {
+  line-height: 3rem;
+  margin: 5rem 0 3rem;
+  text-align: center;
+  font-size: var(--font-size-m);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 2.5rem;
+}
+
+.social-link:link,
+.social-link:visited {
+  color: var(--primary-color);
+  font-size: var(--font-size-l);
+  transition: 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:active {
+  color: var(--secondary-color);
+}
+
+/* --------------------------- */
+/* Responsive  */
+/* --------------------------- */
+
 @media screen and (max-width: 900px) {
   :root {
     --font-size-m: 1.6rem;
@@ -205,7 +283,7 @@ img {
     --font-size-xxl: 2.8rem;
   }
 
-  .show-mobile-menu header::before {
+  .show-mobile-menu .header::before {
     content: "";
     position: fixed;
     left: 0;
@@ -278,5 +356,21 @@ img {
 
   .buttons {
     justify-content: center;
+  }
+
+  .about-section .container {
+    flex-direction: column-reverse;
+    gap: 7rem;
+  }
+
+  .about-details {
+    max-width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    max-width: 25rem;
   }
 }
